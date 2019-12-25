@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row col-md-12 col-md-offset-2 custyle text-center">
+    <table class="table table-striped custab">
+      <thead>
+      <tr>
+        <th>Danh sách chương trình học</th>
+        <th class="text-center">Sửa / Xóa</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let program of programsmodels | paginate: {itemsPerPage:  5, currentPage:pageActual};index as i">
+        <td>{{program.name}}</td>
+        <td class="text-center">
+          <a class="btn btn-light" [routerLink]="['/edit-program', program.id]"><em class="fa fa-pencil"></em></a>
+          <button class="btn btn-danger" (click)="submitDeleteProgram(program.id)"><em class="fa fa-trash"></em></button>
+        </td>
+      </tr>
+    </table>
+    <div id="pagination" style="margin: 0 auto">
+      <pagination-controls (pageChange)="pageActual = $event"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>
