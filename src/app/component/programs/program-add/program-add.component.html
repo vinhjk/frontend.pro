@@ -1,4 +1,4 @@
-<div class="bg_base_lr" style="padding-top: 30px; background: orange">
+<div class="bg_base_lr" style="padding-top: 30px; background: green">
   <div class="container">
     <div class="row">
       <div class="col-sm-3" style="max-width:350px;"></div>
@@ -6,9 +6,9 @@
         <form name="form" [formGroup]="createProgramForm" (ngSubmit)="createProgram()">
           <div class="form-group">
             <h3>Tạo chương trình học !</h3>
-            <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên chương trình"/>
+            <input type="text" class="form-control" [(ngModel)]="learningProgram.learningProgram" formControlName="learningProgram" placeholder="Nhập tên chương trình"/>
             <div class="alert alert-danger" role="alert"
-                 *ngIf="createProgramForm.get('name').invalid && createProgramForm.get('name').touched">
+                 *ngIf="createProgramForm.get('learningProgram').invalid && createProgramForm.get('learningProgram').touched">
               Chương trình học không được để trống
             </div>
           </div>

@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/layout/home/home.component';
-import { ViewProgramComponent } from './view-program/view-program.component';
 import { ProgramAddComponent } from './component/programs/program-add/program-add.component';
 import { ProgramEditComponent } from './component/programs/program-edit/program-edit.component';
 import { ProgramListComponent } from './component/programs/program-list/program-list.component';
@@ -31,7 +30,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
   declarations: [
     AppComponent,
     HomeComponent,
-    ViewProgramComponent,
     ProgramAddComponent,
     ProgramEditComponent,
     ProgramListComponent,

@@ -20,7 +20,7 @@ export class CreateUserComponent implements OnInit {
   ngOnInit() {
     this.createUserForm = this.fb.group({
         name: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
-        username: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+        username: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
         email: [null, [Validators.required, Validators.email]],
         password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(16)]],
         confirmPassword: [null, Validators.required]

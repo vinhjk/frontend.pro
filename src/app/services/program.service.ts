@@ -8,21 +8,21 @@ import {ProgramsModels} from '../interface/programs.models';
 })
 export class ProgramService {
 
-  private API = 'http://localhost:8080/api/auth/learningPrograms/';
+  private API_URL = 'http://localhost:8080/api/auth/learningPrograms/';
   constructor(private httpClient: HttpClient) { }
   getAllPrograms(): Observable<ProgramsModels[]> {
-    return this.httpClient.get<ProgramsModels[]>(this.API);
+    return this.httpClient.get<ProgramsModels[]>(this.API_URL);
   }
-  addPrograms(programsModels: ProgramsModels): Observable<ProgramsModels> {
-    return this.httpClient.post<ProgramsModels>(this.API , programsModels);
+  addPrograms(programsModels: Partial<ProgramsModels>): Observable<ProgramsModels> {
+    return this.httpClient.post<ProgramsModels>(`${this.API_URL}`, programsModels);
   }
   deleteProgram(id: number): Observable<ProgramsModels> {
-    return this.httpClient.delete<ProgramsModels>(this.API  +   id);
+    return this.httpClient.delete<ProgramsModels>(`${this.API_URL}/${id}`);
   }
-  updateProgram(program: ProgramsModels): Observable<ProgramsModels> {
-    return this.httpClient.put<ProgramsModels>(this.API + program.id , program);
+  updateProgram(programsModels: ProgramsModels): Observable<ProgramsModels> {
+    return this.httpClient.put<ProgramsModels>(`${this.API_URL}/${programsModels.id}`, programsModels);
   }
   getProgram(id: number): Observable<ProgramsModels> {
-    return this.httpClient.get<ProgramsModels> (this.API + id);
+    return this.httpClient.get<ProgramsModels> (`${this.API_URL}/${id}`);
   }
 }

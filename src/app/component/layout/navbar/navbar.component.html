@@ -9,7 +9,7 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Chương trình
+          Chương trình học
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['create-program']">Thêm chương trình học</a>
@@ -20,16 +20,16 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Câu Hỏi
+          Mục tiêu
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['create-objective']">Thêm mục tiêu</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" [routerLink]="['list-question']">Danh sách mục tiêu</a>
+          <a class="dropdown-item" [routerLink]="['list-objective']">Danh sách mục tiêu</a>
         </div>
       </li>
 
-      <li class="nav-item dropdown" *ngIf="userService.userOnline===''">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Tài Khoản
         </a>
@@ -54,4 +54,5 @@
     </form>
   </div>
 </nav>
+<hr>
 
